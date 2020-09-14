@@ -6,6 +6,9 @@ public class BowlingShot {
         this.firstPins = firstPins;
     }
 
+    public Integer getTwoSumPins(){
+        return firstPins+secondPins;
+    }
     public boolean isStrike(){
         return firstPins==10;
     }

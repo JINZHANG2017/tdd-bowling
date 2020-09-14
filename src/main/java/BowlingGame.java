@@ -33,19 +33,20 @@ public class BowlingGame {
                     if(nextShot.isStrike()){
                         finalScore+=(20+nextShot.getExtras()[0]);
                     }else{
-                        finalScore+=(10+nextShot.getFirstPins()+nextShot.getSecondPins());
+                        finalScore+=(10+nextShot.getTwoSumPins());
                     }
                 }
                 continue;
             }
             if(bowlingShot.isSpare()&&i==9){
                 finalScore+=(10+bowlingShot.getExtras()[0]);
+                continue;
             }
             if(bowlingShot.isStrike()){
                 BowlingShot nextOneShot=bowlingShotList.get(i+1);
                 BowlingShot nextTwoShot=bowlingShotList.get(i+2);
                 if(!nextOneShot.isStrike()){
-                    finalScore+=(10+nextOneShot.getFirstPins()+nextOneShot.getSecondPins());
+                    finalScore+=(10+nextOneShot.getTwoSumPins());
                 }else {
                     finalScore+=(10+10+nextTwoShot.getFirstPins());
                 }
@@ -53,7 +54,7 @@ public class BowlingGame {
                 BowlingShot nextOneShot=bowlingShotList.get(i+1);
                 finalScore+=(10+nextOneShot.getFirstPins());
             }else{
-                finalScore+=(bowlingShot.getFirstPins()+bowlingShot.getSecondPins());
+                finalScore+=(bowlingShot.getTwoSumPins());
             }
         }
         return finalScore;
