@@ -1,6 +1,7 @@
 import exception.IllegalInputException;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BowlingGameTest {
@@ -12,4 +13,13 @@ public class BowlingGameTest {
             int score=bowlingGame.getScore(testString);
         });
     }
+
+    @Test
+    void should_return_300_if_all_strikes() throws IllegalInputException {
+        BowlingGame bowlingGame=new BowlingGame();
+        String testString="10,10,10,10,10,10,10,10,10,10,10,10";
+        int score=bowlingGame.getScore(testString);
+        assertEquals(300,score);
+    }
+
 }
