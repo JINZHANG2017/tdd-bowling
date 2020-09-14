@@ -47,7 +47,7 @@ public class BowlingGame {
                 if(!nextOneShot.isStrike()){
                     finalScore+=(10+nextOneShot.getFirstPins()+nextOneShot.getSecondPins());
                 }else {
-                    finalScore+=(10+10+nextOneShot.getFirstPins());
+                    finalScore+=(10+10+nextTwoShot.getFirstPins());
                 }
             }else if(bowlingShot.isSpare()){
                 BowlingShot nextOneShot=bowlingShotList.get(i+1);
