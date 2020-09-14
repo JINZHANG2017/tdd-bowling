@@ -22,4 +22,11 @@ public class BowlingGameTest {
         assertEquals(300,score);
     }
 
+    @Test
+    void should_return_0_if_all_zeros() throws IllegalInputException {
+        BowlingGame bowlingGame=new BowlingGame();
+        String testString="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0";
+        int score=bowlingGame.getScore(testString);
+        assertEquals(0,score);
+    }
 }
